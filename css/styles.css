@@ -329,16 +329,11 @@ body {
 
 .features-icon-background {
   display: flex;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
 
   width: 270px;
   height: 120px;
-
-  padding-top: 25px;
-  padding-right: 100px;
-  padding-bottom: 25px;
-  padding-left: 100px;
 
   margin-bottom: 30px;
 
@@ -511,9 +506,6 @@ body {
 
 .customers-icon {
   fill: currentColor;
-
-  width: 50%;
-  height: 50%;
 }
 
 /*===========END Regular customers==============*/
@@ -589,10 +581,11 @@ body {
 
 .footer-social-link {
   display: flex;
+  justify-content: center;
+  align-items: center;
+
   height: 44px;
   width: 44px;
-
-  padding: 12px 12px;
 
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
