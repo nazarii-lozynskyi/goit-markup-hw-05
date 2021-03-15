@@ -490,7 +490,6 @@ body {
 
   color: var(--transform-origin-color);
 
-  width: 170px;
   height: 90px;
 
   border: 1px solid var(--transform-origin-color);
@@ -676,6 +675,10 @@ body {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.pictures:hover .pictures-info-text {
+  opacity: 1;
+}
+
 .pictures-description {
   display: block;
   box-sizing: border-box;
@@ -714,7 +717,7 @@ body {
 .pictures-info-text {
   display: block;
   position: absolute;
-  padding: 24px 63px;
+  padding: 63px 24px;
 
   height: 100%;
   width: 100%;
