@@ -433,10 +433,8 @@ body {
 
 .team-soc-link {
   display: flex;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
-
-  padding: 12px;
 
   color: var(--transform-origin-color);
 
@@ -704,6 +702,36 @@ body {
   font-size: 16px;
   line-height: 1.9;
   letter-spacing: 0.03em;
+}
+
+.pictures-additional-info {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pictures-info-text {
+  display: block;
+  position: absolute;
+  padding: 24px 63px;
+
+  height: 100%;
+  width: 100%;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  color: var(--wight-color);
+  background: rgba(33, 150, 243, 0.9);
+
+  opacity: 0;
+}
+
+.pictures-list-item .pictures-info-text:hover {
+  opacity: 1;
 }
 /*================END PICTURES ==================*/
 /************ END PORTFOLIO.html styles **********/
