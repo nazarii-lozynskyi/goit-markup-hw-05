@@ -155,14 +155,41 @@ body {
   padding-bottom: 31px;
 }
 
+.navigation-link::after {
+  content: "";
+
+  position: relative;
+  bottom: -31px;
+  opacity: 0;
+
+  display: block;
+  background: #2196f3;
+  border-radius: 2px;
+
+  height: 4px;
+}
+
+.navigation-link:hover::after {
+  opacity: 1;
+}
+
+.navigation-link:focus::after {
+  opacity: 1;
+}
+
+.navigation-link:active::after {
+  opacity: 1;
+}
+
 .navigation-link:hover,
 .navigation-link:focus,
 .navigation-link:active {
   color: var(--accent-color);
 }
 
-.current {
+.current::after {
   color: var(--accent-color);
+  opacity: 1;
 }
 /*==== END NAVIGATION ====*/
 
