@@ -153,6 +153,8 @@ body {
 
   padding-top: 32px;
   padding-bottom: 31px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigation-link::after {
@@ -167,6 +169,7 @@ body {
   border-radius: 2px;
 
   height: 4px;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigation-link:hover::after {
@@ -226,6 +229,9 @@ body {
   margin-right: 10px;
 
   fill: currentColor;
+}
+.site-contacts .contacts {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-contacts .contacts:hover,
@@ -492,12 +498,14 @@ body {
   justify-content: center;
   align-items: center;
 
-  color: var(--transform-origin-color);
-
   height: 44px;
   width: 44px;
-
   border-radius: 50%;
+
+  color: var(--transform-origin-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-soc-link-item:not(:last-child) {
@@ -544,13 +552,17 @@ body {
   justify-content: center;
   align-items: center;
 
-  color: var(--transform-origin-color);
-
   height: 90px;
 
   border: 1px solid var(--transform-origin-color);
   box-sizing: border-box;
   border-radius: 4px;
+
+  color: var(--transform-origin-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-link:hover,
 .customers-link:focus,
@@ -645,12 +657,14 @@ body {
 
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-social-link:hover,
 .footer-social-link:active,
 .footer-social-link:focus {
-  background: var(--accent-color);
+  background-color: var(--accent-color);
 }
 
 /*================= MODAL WINDOW =================*/
@@ -738,6 +752,10 @@ body {
   height: 38px;
   padding: 6px 22px;
   border: 0px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filters-button:hover,
 .filters-button:focus,
@@ -765,6 +783,8 @@ body {
 
   margin-left: var(--margin-block);
   margin-top: var(--margin-block);
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*.pictures-list-item:nth-child(3n) {
@@ -823,8 +843,9 @@ body {
 .pictures-info-text {
   display: block;
   position: absolute;
-  padding: 63px 24px;
 
+  transform: translateY(100%);
+  padding: 63px 24px;
   height: 100%;
   width: 100%;
 
@@ -837,10 +858,22 @@ body {
   background: rgba(33, 150, 243, 0.9);
 
   opacity: 0;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.pictures-list-item .pictures-info-text:hover {
+.pictures-list-item,
+.pictures-additional-info {
+  overflow: hidden;
+}
+
+.pictures-list-item:hover .pictures-additional-info {
   opacity: 1;
 }
+
+.pictures-list-item:hover .pictures-info-text {
+  transform: translateY(0);
+}
+
 /*================END PICTURES ==================*/
 /************ END PORTFOLIO.html styles **********/
