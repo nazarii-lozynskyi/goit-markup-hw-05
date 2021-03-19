@@ -162,26 +162,33 @@ body {
 
   position: relative;
   bottom: -31px;
-  opacity: 0;
 
   display: block;
   background: #2196f3;
   border-radius: 2px;
 
   height: 4px;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  opacity: 0;
+
+  transform: scaleX(0);
+  transition: transform;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.navigation-link:hover::after {
+/*.navigation-link:hover::after {
   opacity: 1;
-}
+}*/
 
 .navigation-link:focus::after {
   opacity: 1;
+  transform: scaleX(1);
 }
 
 .navigation-link:active::after {
   opacity: 1;
+  transform: scaleX(1);
 }
 
 .navigation-link:hover,
@@ -193,6 +200,7 @@ body {
 .current::after {
   color: var(--accent-color);
   opacity: 1;
+  transform: scaleX(1);
 }
 /*==== END NAVIGATION ====*/
 
@@ -676,6 +684,9 @@ body {
   top: 0px;
 
   background: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -683,11 +694,14 @@ body {
   pointer-events: none;
 }
 
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
 
   width: 528px;
   height: 581px;
@@ -697,6 +711,9 @@ body {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  transform: scale(1) translate(-50%, -50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-modal-btn {
@@ -801,10 +818,6 @@ body {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.pictures:hover .pictures-info-text {
-  opacity: 1;
-}
-
 .pictures-description {
   display: block;
   box-sizing: border-box;
@@ -840,7 +853,7 @@ body {
   align-items: center;
 }
 
-.pictures-info-text {
+.pictures-list-item .pictures-info-text {
   display: block;
   position: absolute;
 
@@ -857,8 +870,6 @@ body {
   color: var(--wight-color);
   background: rgba(33, 150, 243, 0.9);
 
-  opacity: 0;
-
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -867,12 +878,14 @@ body {
   overflow: hidden;
 }
 
-.pictures-list-item:hover .pictures-additional-info {
+.pictures-list-item:hover .pictures-info-text {
+  transform: translateY(0);
   opacity: 1;
 }
 
-.pictures-list-item:hover .pictures-info-text {
+.pictures-list-item:focus .pictures-info-text {
   transform: translateY(0);
+  opacity: 1;
 }
 
 /*================END PICTURES ==================*/
